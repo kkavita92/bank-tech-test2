@@ -17,6 +17,18 @@
       "/Users/kavitak/makers_academy/tech-tests/bank_tech_test2/spec/features/feature_spec.rb": [
 
       ],
+      "/Users/kavitak/makers_academy/tech-tests/bank_tech_test2/spec/transaction_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/kavitak/makers_academy/tech-tests/bank_tech_test2/lib/transaction.rb": [
+        1,
+        null
+      ],
       "/Users/kavitak/makers_academy/tech-tests/bank_tech_test2/spec/transactions_spec.rb": [
         1,
         null,
@@ -55,6 +67,6 @@
         null
       ]
     },
-    "timestamp": 1499770095
+    "timestamp": 1499770391
   }
 }

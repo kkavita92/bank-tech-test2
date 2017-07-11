@@ -1,12 +1,12 @@
 class Transactions
 
-  attr_reader :list
+  attr_reader :list_of_transactions
 
   def initialize
-    @list = []
+    @list_of_transactions = []
   end
 
   def add_transaction(transaction)
-    @list << transaction
+    @list_of_transactions << transaction
   end
 end
