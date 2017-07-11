@@ -1,5 +1,6 @@
 require '././lib/account'
 
-p account = Account.new
-p account.deposit(1000)
-p account.withdraw(900)
+account = Account.new
+account.deposit(1000)
+account.withdraw(900)
+account.get_statement()
