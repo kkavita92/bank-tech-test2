@@ -1,5 +1,4 @@
 require_relative './transactions'
-require_relative './transaction'
 
 class Account
 
