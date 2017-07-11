@@ -2,13 +2,13 @@ require 'transactions'
 
 describe Transactions do
   subject(:transactions) { described_class.new }
-  let(:transaction) { double :transaction, date: Date.today, amount: 1000}
 
-  describe '#add_transaction' do
-    it 'should add new transaction to transaction list' do
-      expect(transactions.add_transaction(transaction)).to eq [transaction]
+  describe '#add_credit_transaction' do
+    it 'adds new transaction to list' do
+      expect(transactions.add_credit_transaction(100)).to eq [{amount: 100, date: Date.new}]
     end
   end
+
 
 
 end
