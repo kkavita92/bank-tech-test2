@@ -1,15 +1,9 @@
 require_relative './withdraw'
 require_relative './deposit'
 require_relative './transactions'
+require_relative './statement'
 
 class Account
-
-  STATEMENT_HEADER = "date || credit || debit || balance"
-
-  def initialize(transactions = Transactions.new)
-    @transactions = transactions
-    @initial_balance = 0
-  end
 
   def deposit(amount, deposit = Deposit)
     @transactions.add_transaction(deposit.new(amount))
@@ -20,23 +14,18 @@ class Account
   end
 
   def print_statement
-    p STATEMENT_HEADER
-    @transactions.list.each do |transaction|
-      print_row(transaction)
-    end
+    @statement.print_statement(transaction_list)
   end
 
-  def print_row(transaction)
-    p "#{transaction.date} || #{transaction.amount} || #{updated_balance(transaction)} "
+  private
+
+  def initialize(transactions = Transactions.new, statement = Statement.new)
+    @transactions = transactions
+    @statement = statement
   end
-
-
-  def updated_balance(transaction)
-    if transaction.is_a? Deposit
-      @initial_balance += transaction.amount
-    else
-      @initial_balance -= transaction.amount
-    end
+  
+  def transaction_list
+    @transactions.list
   end
 
 end
