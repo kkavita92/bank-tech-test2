@@ -36,5 +36,5 @@ class Statement
   def format_currency(amount)
     format('%.2f', amount) unless amount.nil?
   end
-  
+
 end

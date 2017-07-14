@@ -5,12 +5,12 @@ require_relative './statement'
 
 class Account
 
-  def deposit(amount, deposit = Deposit)
-    @transactions.add_transaction(deposit.new(amount))
+  def deposit(amount, transaction_type = Deposit)
+    @transactions.add_transaction(amount, transaction_type)
   end
 
-  def withdraw(amount, withdraw = Withdraw)
-    @transactions.add_transaction(withdraw.new(amount))
+  def withdraw(amount, transaction_type = Withdraw)
+    @transactions.add_transaction(amount, transaction_type)
   end
 
   def print_statement
@@ -23,7 +23,7 @@ class Account
     @transactions = transactions
     @statement = statement
   end
-  
+
   def transaction_list
     @transactions.list
   end
