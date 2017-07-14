@@ -3,7 +3,7 @@ class Transactions
   attr_reader :list
 
   def initialize(list = [])
-    @list = []
+    @list = list
   end
 
   def add_transaction(amount, transaction_type)

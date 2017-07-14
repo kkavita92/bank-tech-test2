@@ -2,8 +2,12 @@ class Statement
 
   STATEMENT_HEADER = 'date || credit || debit || balance'.freeze
 
+  def initialize(output = STDOUT)
+    @output = output
+  end
+
   def print_statement(statement)
-    p STATEMENT_HEADER
+    @output.puts STATEMENT_HEADER
     statement_body(statement)
   end
 
@@ -12,7 +16,7 @@ class Statement
   def statement_body(transactions)
     statement = compile_statement(transactions)
     statement.reverse.each do |transaction|
-      p format_transaction(transaction)
+      @output.puts format_transaction(transaction)
     end
   end
 
